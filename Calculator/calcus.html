@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="D:\bootstrap-5.3.0-alpha3-dist\css\bootstrap.min.css">
+  <style>
+    .calculator {
+      width: 300px;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+    .calculator .btn {
+      width: 70px;
+      height: 70px;
+      font-size: 24px;
+    }
+    body {
+  background-image:url("giphy.gif");
+  background-repeat: no-repeat;
+  
+  }
+
+  </style>
+</head>
+<body>     
+  <h1 style="text-align:center;">Calculator</h1>
+  <div class="container">
+    <div class="calculator">
+      <input type="text" class="form-control" id="display" readonly>
+      <table>
+        <tr>
+          <td><button class="btn btn-primary" onclick="addToDisplay(7)">7</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay(8)">8</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay(9)">9</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay('/')">/</button></td>
+        </tr>
+        <tr>
+          <td><button class="btn btn-primary" onclick="addToDisplay(4)">4</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay(5)">5</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay(6)">6</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay('*')">*</button></td>
+        </tr>
+        <tr>
+          <td><button class="btn btn-primary" onclick="addToDisplay(1)">1</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay(2)">2</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay(3)">3</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button class="btn btn-primary" onclick="addToDisplay(0)">0</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay('.')">.</button></td>
+          <td><button class="btn btn-primary" onclick="calculate()">=</button></td>
+          <td><button class="btn btn-primary" onclick="addToDisplay('+')">+</button></td>
+        </tr>
+        <tr>
+          <td colspan="4"><button class="btn btn-secondary" onclick="clearDisplay()">C</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function addToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function calculate() {
+      var display = document.getElementById('display');
+      var result = eval(display.value);
+      display.value = result;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+  </script>
+</body>
+</html>
